@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DESIGNVATE VENTURES LLP — Website
 
-## Getting Started
+A premium, mobile-first website for DESIGNVATE VENTURES LLP (VSAS Group), built with Next.js, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Edit Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All website content is controlled via a single file:
 
-## Learn More
+```
+/data/content.json
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Option 1: Use the Browser Editor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Go to `/edit` on your website
+2. Enter password: `designvate2024`
+3. Edit any section using the form fields
+4. Click **Download JSON** to get the updated file
+5. Replace `/data/content.json` in your project with the downloaded file
+6. Push to GitHub — Vercel auto-deploys
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 2: Edit the JSON File Directly
 
-## Deploy on Vercel
+1. Open `/data/content.json` in any text editor
+2. Edit the text, image URLs, or add/remove items
+3. Save the file
+4. Push to GitHub to deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### What You Can Edit
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Section       | What you can change                        |
+| ------------- | ------------------------------------------ |
+| Home          | Title, subtitle, hero image, CTA button    |
+| About         | Description, vision, mission, team info    |
+| Stats         | Numbers and labels                         |
+| Services      | Add/edit/remove services                   |
+| Projects      | Add/edit/remove projects with images       |
+| Testimonials  | Client quotes                              |
+| Clients       | Client names and logos                      |
+| Contact       | Phone, email, address, map                 |
+| SEO           | Page title, meta description, keywords     |
+
+### Images
+
+You can use:
+- **External URLs** (recommended) — e.g., from Unsplash, Imgur, or any image hosting
+- **Local images** — place them in `/public/images/` and reference as `/images/filename.jpg`
+
+## Deploy on Vercel (Free)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Click **Import Project** → Select your GitHub repo
+4. Click **Deploy** — that's it!
+
+Every time you push changes to GitHub, Vercel automatically re-deploys.
+
+## Deploy on Netlify (Free)
+
+1. Push your code to GitHub
+2. Go to [netlify.com](https://netlify.com)
+3. Click **Add New Site** → **Import an existing project**
+4. Select your GitHub repo
+5. Build command: `npm run build`
+6. Publish directory: `.next`
+7. Click **Deploy**
+
+## Tech Stack
+
+- **Next.js 16** (App Router, Static Generation)
+- **Tailwind CSS** (Utility-first styling)
+- **Framer Motion** (Animations)
+- **Lucide React** (Icons)
+- No backend, no database
+
+## Project Structure
+
+```
+website/
+├── data/
+│   └── content.json          ← Edit this file to update website content
+├── public/
+│   └── images/               ← Place local images here
+├── src/
+│   ├── app/
+│   │   ├── about/            ← About page
+│   │   ├── contact/          ← Contact page
+│   │   ├── edit/             ← Content editor (browser-based)
+│   │   ├── projects/         ← Projects listing + detail pages
+│   │   ├── services/         ← Services listing + detail pages
+│   │   ├── layout.tsx        ← Root layout
+│   │   └── page.tsx          ← Home page
+│   ├── components/           ← Reusable UI components
+│   └── lib/
+│       └── content.ts        ← Content loader
+└── package.json
+```

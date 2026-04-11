@@ -1,0 +1,284 @@
+{
+  "home": {
+    "title": "Building Dreams Into Reality",
+    "subtitle": "Premium Civil Engineering & Interior Design Solutions",
+    "heroImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80",
+    "ctaText": "Get a Free Quote",
+    "ctaPhone": "+918960449433"
+  },
+
+  "about": {
+    "title": "About DESIGNVATE VENTURES LLP",
+    "description": "DESIGNVATE VENTURES LLP (VSAS Group) began as a general works contractor. Over the years, the group has undertaken and managed challenging projects, accumulating skills, know-how, and experiences in design-and-build solutions, project management services, building trades, furniture designing, manufacturing, architecture, and related engineering works.",
+    "description2": "Today, VSAS Group takes on the role of main contractor for small to medium size projects and performs project management services to coordinate specialist trades for industrial and commercial projects. We also provide design inputs and engineering solutions as value-add services to our clients.",
+    "team": "We have a strong and dedicated team of well-experienced partners who make every challenging project successful. Our team members bring vast experience in field works including material management, labour engagement, and resolving all types of challenges with the best support of local administration.",
+    "vision": "To be a highly respectable building contractor delivering beyond expectations. To procure projects at competitive pricing, provide safe working conditions, and deliver quality work within reasonable time frames.",
+    "mission": "Our mission is to consistently exceed client expectations through meticulous project management, clear communication, and follow-through procedures that ensure client objectives are top priorities in planning and execution.",
+    "philosophy": "We take pride in our delivery. Our clients can always be assured that only the most experienced and qualified people are serving them. Our emphasis on clear communication and follow-through procedures ensures that client objectives are top priorities.",
+    "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"
+  },
+
+  "whyChooseUs": [
+    {
+      "title": "End-to-End Solutions",
+      "description": "Concept-to-completion solutions for transforming spaces — from design to final handover.",
+      "icon": "Layers"
+    },
+    {
+      "title": "Experienced Team",
+      "description": "A dedicated team of well-experienced professionals who make every challenging project successful.",
+      "icon": "Users"
+    },
+    {
+      "title": "Quality Assurance",
+      "description": "In-house architecture, structural, quality control, and testing units ensure world-class results.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "title": "Timely Delivery",
+      "description": "We create detailed schedules and resource plans to meet client project objectives on time.",
+      "icon": "Clock"
+    },
+    {
+      "title": "Corporate Experience",
+      "description": "Privileged to work with leading brands including Adani Group, Reliance Industries, and more.",
+      "icon": "Building2"
+    },
+    {
+      "title": "Custom Design & Build",
+      "description": "We deal in both designing and production of customized furniture and other fit-out works.",
+      "icon": "Paintbrush"
+    }
+  ],
+
+  "stats": [
+    { "label": "Projects Completed", "value": "120+" },
+    { "label": "Years Experience", "value": "10+" },
+    { "label": "Team Members", "value": "50+" },
+    { "label": "Happy Clients", "value": "80+" }
+  ],
+
+  "services": [
+    {
+      "title": "Corporate Interiors",
+      "description": "Premium interior solutions for offices, airports, hotels, and retail spaces.",
+      "icon": "Building",
+      "slug": "corporate-interiors",
+      "details": "We specialize in creating stunning corporate interiors that blend functionality with aesthetics. Our portfolio includes work at Lucknow Airport, Jaipur Airport, Mumbai Airport, Shri Ganpati Hotel, and Bata showrooms. From concept design to final execution, we handle every aspect of the project.",
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+    },
+    {
+      "title": "Residential Construction",
+      "description": "Complete residential building solutions — apartments, villas, and turn-key projects.",
+      "icon": "Home",
+      "slug": "residential-construction",
+      "details": "Our residential construction services cover everything from apartment buildings to luxury villas. We handle turn-key projects with premium finishes, ensuring every home reflects elegance and comfort. Our Lucknow residential projects showcase our commitment to quality craftsmanship.",
+      "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+    },
+    {
+      "title": "Government Projects",
+      "description": "Schools, hospitals, roads, culverts, warehouses, and heritage temple restoration.",
+      "icon": "Landmark",
+      "slug": "government-projects",
+      "details": "We undertake various government infrastructure projects including schools, hospitals, road construction, culverts, warehouses, and heritage temple restoration. Our team has extensive experience in meeting government standards and compliance requirements.",
+      "image": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800&q=80"
+    },
+    {
+      "title": "Interior Design",
+      "description": "Complete interior design services including lighting, furniture, and space planning.",
+      "icon": "Paintbrush",
+      "slug": "interior-design",
+      "details": "Our interior design team transforms spaces with innovative lighting solutions, custom furniture, and thoughtful space planning. We create ambiences that feel luxurious — from outdoor garden lighting to premium indoor setups. We don't just install elements; we create experiences.",
+      "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+    },
+    {
+      "title": "Project Management",
+      "description": "End-to-end project management services for industrial and commercial projects.",
+      "icon": "ClipboardList",
+      "slug": "project-management",
+      "details": "Our project management philosophy centers on creating detailed schedules and resource plans, clear communication with all stakeholders, quality supervision, and timely delivery. We coordinate specialist trades and provide engineering solutions as value-add services.",
+      "image": "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=800&q=80"
+    },
+    {
+      "title": "Custom Furniture",
+      "description": "Design and production of customized furniture and fit-out works.",
+      "icon": "Armchair",
+      "slug": "custom-furniture",
+      "details": "We specialize in designing and manufacturing customized furniture and fit-out works. Our production team ensures every piece meets the highest standards of quality and aesthetics, perfectly matching the overall design vision of your space.",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Jaipur Airport Project",
+      "slug": "jaipur-airport",
+      "description": "Premium interior work at Jaipur International Airport",
+      "image": "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=800&q=80",
+      "location": "Jaipur, Rajasthan",
+      "timeline": "2023-2024",
+      "category": "Corporate",
+      "details": "Comprehensive interior work at Jaipur International Airport, including retail outlets and food court spaces. The project involved coordinating with airport authorities and meeting strict safety and design standards.",
+      "images": ["https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=800&q=80"]
+    },
+    {
+      "title": "Lucknow Airport Project",
+      "slug": "lucknow-airport",
+      "description": "Multiple outlet interiors at Lucknow Airport — Third Wave Coffee, Domino's, Mad Over Donuts, Budweiser Bar",
+      "image": "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80",
+      "location": "Lucknow, Uttar Pradesh",
+      "timeline": "2023-2025",
+      "category": "Corporate",
+      "details": "Multiple food and beverage outlet interiors at Chaudhary Charan Singh International Airport, Lucknow. Projects include Third Wave Coffee, Wrapafella, Domino's, Mad Over Donuts, and Budweiser Bar. Each outlet was designed to create unique dining experiences for travelers.",
+      "images": ["https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80"]
+    },
+    {
+      "title": "Lucknow Residential Project",
+      "slug": "lucknow-residential",
+      "description": "Premium residential design — simple, elegant, and value for money",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "location": "Lucknow, Uttar Pradesh",
+      "timeline": "2024-2025",
+      "category": "Residential",
+      "details": "Multiple residential projects in Lucknow featuring premium staircase designs in Steel Grey + White, Tan Brown + Cream, and Black + White combinations. Each design is classy, budget-friendly, unique, and practical.",
+      "images": ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"]
+    },
+    {
+      "title": "Shree Ganpati Sweets & Restaurant",
+      "slug": "ganpati-restaurant",
+      "description": "Complete interior design and execution for a premium restaurant",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+      "location": "Lucknow, Uttar Pradesh",
+      "timeline": "2023-2024",
+      "category": "Corporate",
+      "details": "Complete interior design and execution for Shree Ganpati Sweets & Restaurant in Lucknow. The project involved creating a warm, inviting atmosphere that reflects the rich culinary tradition of the establishment.",
+      "images": ["https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"]
+    },
+    {
+      "title": "Barabanki School Project",
+      "slug": "barabanki-school",
+      "description": "Government school construction and infrastructure development",
+      "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
+      "location": "Barabanki, Uttar Pradesh",
+      "timeline": "2022-2023",
+      "category": "Government",
+      "details": "Construction and infrastructure development for a government school in Barabanki. The project focused on creating a safe, functional, and inspiring learning environment for students.",
+      "images": ["https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"]
+    },
+    {
+      "title": "Sitapur Heritage Project",
+      "slug": "sitapur-heritage",
+      "description": "Heritage temple restoration and conservation work",
+      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+      "location": "Sitapur, Uttar Pradesh",
+      "timeline": "2022-2024",
+      "category": "Government",
+      "details": "Heritage temple restoration and conservation project in Sitapur. The work involved careful preservation of historical architectural elements while upgrading structural integrity and safety features.",
+      "images": ["https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80"]
+    },
+    {
+      "title": "Government Warehouse Project",
+      "slug": "government-warehouse",
+      "description": "Large-scale government warehouse construction",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+      "location": "Uttar Pradesh",
+      "timeline": "2023-2024",
+      "category": "Government",
+      "details": "Construction of government warehouses with focus on structural durability, efficient space utilization, and compliance with government standards. The project included modern storage solutions and loading dock facilities.",
+      "images": ["https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"]
+    },
+    {
+      "title": "Interlocking Road Construction",
+      "slug": "interlocking-road",
+      "description": "Government interlocking road construction project",
+      "image": "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&q=80",
+      "location": "Uttar Pradesh",
+      "timeline": "2023-2024",
+      "category": "Government",
+      "details": "Government interlocking road construction project involving durable paver blocks, proper drainage systems, and long-lasting road surfaces designed to withstand heavy traffic and weather conditions.",
+      "images": ["https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&q=80"]
+    }
+  ],
+
+  "testimonials": [
+    {
+      "name": "Rajesh Kumar",
+      "designation": "Project Head, Adani Group",
+      "feedback": "Exceptional quality and timely delivery. VSAS Group demonstrated outstanding professionalism throughout our airport project. Their attention to detail is unmatched."
+    },
+    {
+      "name": "Priya Sharma",
+      "designation": "Director, Residential Developer",
+      "feedback": "The residential project was delivered beyond our expectations. The design choices were elegant, practical, and perfectly within budget. Highly recommended."
+    },
+    {
+      "name": "Amit Singh",
+      "designation": "Restaurant Owner",
+      "feedback": "Designvate transformed our restaurant space completely. The ambience they created has directly contributed to increased footfall. Their team is creative and reliable."
+    }
+  ],
+
+  "clients": [
+    { "name": "Adani Group", "logo": "" },
+    { "name": "Reliance Industries", "logo": "" },
+    { "name": "Cococart", "logo": "" },
+    { "name": "Third Wave Coffee", "logo": "" },
+    { "name": "Domino's", "logo": "" },
+    { "name": "Mad Over Donuts", "logo": "" },
+    { "name": "Budweiser", "logo": "" },
+    { "name": "Bata", "logo": "" }
+  ],
+
+  "industries": [
+    "Corporate & Commercial",
+    "Airports & Aviation",
+    "Residential",
+    "Government Infrastructure",
+    "Hospitality & Restaurants",
+    "Heritage & Conservation",
+    "Roads & Transportation",
+    "Healthcare & Education"
+  ],
+
+  "setup": {
+    "title": "Our Setup",
+    "teams": [
+      "In-house Architecture Team",
+      "Structural Team",
+      "Project Management Team",
+      "Quality Control Team",
+      "Production Team",
+      "Testing Units"
+    ]
+  },
+
+  "values": {
+    "metal": "Being tough with the timeline while being gentle on the team.",
+    "wood": "Collecting layers and layers of experience to stay strong and long.",
+    "sand": "Stimulate the mind environment to be proof against all challenges."
+  },
+
+  "contact": {
+    "phone": "+91 8960449433",
+    "phone2": "+91 9582408654",
+    "phone3": "+91 9839986465",
+    "email": "designvatellp@gmail.com",
+    "email2": "vsasgroup@gmail.com",
+    "address": "Lucknow, Uttar Pradesh, India",
+    "whatsapp": "918960449433",
+    "instagram": "https://www.instagram.com/designvateventuresllp/",
+    "website": "www.vsasgroup.com",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.38256940748!2d80.77769935!3d26.8466937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+  },
+
+  "seo": {
+    "title": "DESIGNVATE VENTURES LLP | Premium Civil Engineering & Interior Design",
+    "description": "Concept-to-completion solutions for transforming spaces. Premium civil engineering, interior design, and construction services in Lucknow by DESIGNVATE VENTURES LLP (VSAS Group).",
+    "keywords": "civil engineering, interior design, construction, Lucknow, VSAS Group, Designvate, airport interiors, residential construction, government projects"
+  },
+
+  "companyProfile": {
+    "downloadUrl": "/files/company-profile.pdf",
+    "label": "Download Company Profile"
+  }
+}
