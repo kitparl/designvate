@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
 
 interface ContactInfo {
   phone: string;
@@ -14,18 +22,70 @@ interface ContactInfo {
   mapEmbedUrl: string;
 }
 
+type Status =
+  | { kind: "idle" }
+  | { kind: "submitting" }
+  | { kind: "success" }
+  | { kind: "error"; message: string };
+
 export default function ContactContent({
   contact,
 }: {
   contact: ContactInfo;
 }) {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>({ kind: "idle" });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    if (status.kind === "submitting") return;
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") || ""),
+      phone: String(data.get("phone") || ""),
+      email: String(data.get("email") || ""),
+      service: String(data.get("service") || ""),
+      details: String(data.get("details") || ""),
+      honeypot: String(data.get("company") || ""),
+    };
+
+    setStatus({ kind: "submitting" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!res.ok || !json.ok) {
+        setStatus({
+          kind: "error",
+          message:
+            json.error ||
+            "Something went wrong. Please try again or call us directly.",
+        });
+        return;
+      }
+
+      form.reset();
+      setStatus({ kind: "success" });
+      setTimeout(() => setStatus({ kind: "idle" }), 6000);
+    } catch {
+      setStatus({
+        kind: "error",
+        message:
+          "Network error. Please check your connection and try again.",
+      });
+    }
   };
+
+  const submitting = status.kind === "submitting";
 
   return (
     <section className="py-24">
@@ -143,7 +203,7 @@ export default function ContactContent({
                 24 hours.
               </p>
 
-              {submitted ? (
+              {status.kind === "success" ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <CheckCircle size={48} className="mb-4 text-green-500" />
                   <h3 className="mb-2 font-display text-lg font-semibold text-primary">
@@ -155,46 +215,76 @@ export default function ContactContent({
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="mb-1.5 block text-xs font-medium text-text-light">
+                      <label
+                        htmlFor="contact-name"
+                        className="mb-1.5 block text-xs font-medium text-text-light"
+                      >
                         Full Name *
                       </label>
                       <input
+                        id="contact-name"
+                        name="name"
                         type="text"
                         required
-                        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20"
+                        autoComplete="name"
+                        disabled={submitting}
+                        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label className="mb-1.5 block text-xs font-medium text-text-light">
+                      <label
+                        htmlFor="contact-phone"
+                        className="mb-1.5 block text-xs font-medium text-text-light"
+                      >
                         Phone *
                       </label>
                       <input
+                        id="contact-phone"
+                        name="phone"
                         type="tel"
                         required
-                        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20"
+                        autoComplete="tel"
+                        disabled={submitting}
+                        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
                         placeholder="Your phone"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-xs font-medium text-text-light">
+                    <label
+                      htmlFor="contact-email"
+                      className="mb-1.5 block text-xs font-medium text-text-light"
+                    >
                       Email
                     </label>
                     <input
+                      id="contact-email"
+                      name="email"
                       type="email"
-                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20"
+                      autoComplete="email"
+                      disabled={submitting}
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
                       placeholder="Your email"
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-xs font-medium text-text-light">
+                    <label
+                      htmlFor="contact-service"
+                      className="mb-1.5 block text-xs font-medium text-text-light"
+                    >
                       Service Interested In
                     </label>
-                    <select className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20">
+                    <select
+                      id="contact-service"
+                      name="service"
+                      disabled={submitting}
+                      defaultValue=""
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
+                    >
                       <option value="">Select a service</option>
                       <option>Corporate Interiors</option>
                       <option>Residential Construction</option>
@@ -206,22 +296,70 @@ export default function ContactContent({
                     </select>
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-xs font-medium text-text-light">
+                    <label
+                      htmlFor="contact-details"
+                      className="mb-1.5 block text-xs font-medium text-text-light"
+                    >
                       Project Details *
                     </label>
                     <textarea
+                      id="contact-details"
+                      name="details"
                       required
                       rows={4}
-                      className="w-full resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20"
+                      disabled={submitting}
+                      className="w-full resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
                       placeholder="Tell us about your project..."
                     />
                   </div>
+
+                  {/* Honeypot — must stay empty. Hidden from real users. */}
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      left: "-10000px",
+                      width: 1,
+                      height: 1,
+                      overflow: "hidden",
+                    }}
+                  >
+                    <label htmlFor="contact-company">Company</label>
+                    <input
+                      id="contact-company"
+                      name="company"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
+                  {status.kind === "error" && (
+                    <div
+                      role="alert"
+                      className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                    >
+                      <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                      <span>{status.message}</span>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-light hover:shadow-lg"
+                    disabled={submitting}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-light hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:shadow-none"
                   >
-                    <Send size={16} />
-                    Send Request
+                    {submitting ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        <Send size={16} />
+                        Send Request
+                      </>
+                    )}
                   </button>
                 </form>
               )}
