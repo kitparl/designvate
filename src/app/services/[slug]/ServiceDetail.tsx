@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
+import { getContent } from "@/lib/content";
 
 interface Service {
   title: string;
@@ -20,6 +21,8 @@ export default function ServiceDetail({
   allServices: Service[];
 }) {
   const otherServices = allServices.filter((s) => s.slug !== service.slug);
+  const content = getContent();
+  const ctaPhone = content.home.ctaPhone || content.contact.phone;
 
   return (
     <section className="py-24">
@@ -45,7 +48,7 @@ export default function ServiceDetail({
             <h2 className="mb-6 font-display text-2xl font-bold text-primary">
               About This Service
             </h2>
-            <p className="mb-8 text-lg leading-relaxed text-text-light">
+            <p className="mb-8 whitespace-pre-line text-lg leading-relaxed text-text-light">
               {service.details}
             </p>
 
@@ -59,7 +62,7 @@ export default function ServiceDetail({
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:+918960449433"
+                  href={`tel:${ctaPhone}`}
                   className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-light"
                 >
                   <Phone size={16} />

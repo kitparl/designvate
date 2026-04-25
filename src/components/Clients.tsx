@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 interface Client {
   name: string;
-  logo: string;
+  logo?: string;
 }
 
 export default function Clients({ clients }: { clients: Client[] }) {

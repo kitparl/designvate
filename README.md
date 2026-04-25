@@ -22,7 +22,7 @@ All website content is controlled via a single file:
 ### Option 1: Use the Browser Editor
 
 1. Go to `/edit` on your website
-2. Enter password: `designvate2024`
+2. Enter password: `ankur@123`
 3. Edit any section using the form fields
 4. Click **Download JSON** to get the updated file
 5. Replace `/data/content.json` in your project with the downloaded file

@@ -54,7 +54,7 @@ export default function ProjectDetail({
             <h2 className="mb-6 font-display text-2xl font-bold text-primary">
               Project Overview
             </h2>
-            <p className="mb-8 text-lg leading-relaxed text-text-light">
+            <p className="mb-8 whitespace-pre-line text-lg leading-relaxed text-text-light">
               {project.details}
             </p>
 

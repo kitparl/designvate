@@ -10,9 +10,16 @@ interface HeroProps {
   subtitle: string;
   heroImage: string;
   ctaText: string;
+  ctaPhone: string;
 }
 
-export default function Hero({ title, subtitle, heroImage, ctaText }: HeroProps) {
+export default function Hero({
+  title,
+  subtitle,
+  heroImage,
+  ctaText,
+  ctaPhone,
+}: HeroProps) {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       {/* Background */}
@@ -70,7 +77,7 @@ export default function Hero({ title, subtitle, heroImage, ctaText }: HeroProps)
             className="mt-10 flex flex-wrap gap-4"
           >
             <a
-              href="tel:+918960449433"
+              href={`tel:${ctaPhone}`}
               className="group inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-accent-light hover:shadow-xl"
             >
               {ctaText}

@@ -3,8 +3,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import Link from "next/link";
+import { getContent } from "@/lib/content";
 
 export default function CTASection() {
+  const content = getContent();
+  const ctaPhone = content.home.ctaPhone || content.contact.phone;
+
   return (
     <section className="bg-primary py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,7 +31,7 @@ export default function CTASection() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="tel:+918960449433"
+              href={`tel:${ctaPhone}`}
               className="group inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-accent-light hover:shadow-xl"
             >
               <Phone size={16} />

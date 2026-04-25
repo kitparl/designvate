@@ -19,6 +19,7 @@ export default function Home() {
         subtitle={content.home.subtitle}
         heroImage={content.home.heroImage}
         ctaText={content.home.ctaText}
+        ctaPhone={content.home.ctaPhone}
       />
       <WhyChooseUs items={content.whyChooseUs} />
       <Stats stats={content.stats} />

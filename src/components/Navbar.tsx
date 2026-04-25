@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getContent } from "@/lib/content";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,6 +18,9 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const content = getContent();
+  const ctaPhone = content.home.ctaPhone || content.contact.phone;
+  const ctaText = content.home.ctaText || "Get Quote";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -75,11 +79,11 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="tel:+918960449433"
+              href={`tel:${ctaPhone}`}
               className="flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-light hover:shadow-lg"
             >
               <Phone size={14} />
-              Get Quote
+              {ctaText}
             </a>
           </div>
 
@@ -115,11 +119,11 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="tel:+918960449433"
+                href={`tel:${ctaPhone}`}
                 className="mt-2 flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white"
               >
                 <Phone size={14} />
-                Get a Free Quote
+                {ctaText}
               </a>
             </div>
           </motion.div>
